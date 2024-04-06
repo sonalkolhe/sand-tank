@@ -1,0 +1,119 @@
+/** @format */
+:root {
+  --color-primary: #5ec576;
+  --gradient-primary: linear-gradient(to top left, #af8244, #f1d1a4);
+}
+
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  padding: 8vw 0;
+  position: relative;
+  color: rgb(45, 45, 45);
+}
+
+#moving-text {
+  overflow-x: auto;
+  white-space: nowrap;
+  user-select: none;
+}
+
+#moving-text::-webkit-scrollbar {
+  display: none;
+}
+
+.con {
+  white-space: nowrap;
+  display: inline-block;
+  animation-name: move;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#moving-text h1 {
+  font-size: 6vw;
+  display: inline-block;
+}
+
+#gola {
+  height: 70px;
+  width: 70px;
+  margin-top: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  background-image: var(--gradient-primary);
+  margin: 0 4vw;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#page2-bottom {
+  height: 80vh;
+  width: 100%;
+  padding: 4.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 9;
+}
+
+#page2-bottom h1 {
+  font-size: 4vw;
+  width: 60%;
+  line-height: 4vw;
+}
+
+#bottom-part2 {
+  width: 20%;
+}
+
+#bottom-part2 img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+#bottom-part2 p {
+  font-weight: 200;
+  margin-top: 2vw;
+  font-size: 1vw;
+}
+
+#page2 #gooey {
+  height: 32vw;
+  width: 32vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #d0ff00, #db0505);
+  /* background: var(--gradient-primary); */
+
+  top: 48%;
+  left: 25%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes gooey {
+  0% {
+    filter: blur(10px);
+    transform: translate(10%, -10%) skew(0);
+  }
+
+  100% {
+    filter: blur(20px);
+    transform: translate(-15%, 15%) skew(-12deg);
+  }
+}
